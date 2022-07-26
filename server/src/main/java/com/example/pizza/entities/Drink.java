@@ -13,8 +13,8 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "pizza")
-public class Pizza {
+@Table(name = "drink")
+public class Drink {
     @Id
     @GeneratedValue(generator = "system-uuid")
     @GenericGenerator(name = "system-uuid", strategy = "uuid")
@@ -26,4 +26,5 @@ public class Pizza {
     private String description;
 
     private Double price;
+
 }
