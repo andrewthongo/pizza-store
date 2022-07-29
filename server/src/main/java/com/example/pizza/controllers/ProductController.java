@@ -5,8 +5,6 @@ import com.example.pizza.dto.PizzaDto;
 import com.example.pizza.entities.Drink;
 import com.example.pizza.entities.Pizza;
 import com.example.pizza.services.ProductService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +16,6 @@ import java.util.Optional;
 @RestController
 @RequestMapping(path = "api/v1/products")
 public class ProductController {
-    private static final Logger LOGGER = LoggerFactory.getLogger(ProductController.class);
 
     private ProductService productService;
 

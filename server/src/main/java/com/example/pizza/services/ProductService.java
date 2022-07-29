@@ -33,7 +33,7 @@ public class ProductService {
     }
 
     public Optional<PizzaDto> addPizza(PizzaDto pizzaDto) {
-        Pizza result = convertToEntity(pizzaDto);
+        Pizza result = toEntity(pizzaDto);
         result = pizzaRepository.save(result);
         PizzaDto newPizza = toModel(result);
         return Optional.of(newPizza);
@@ -44,13 +44,13 @@ public class ProductService {
     }
 
     public Optional<DrinkDto> addDrink(DrinkDto drinkDto) {
-        Drink result = convertToEntity(drinkDto);
+        Drink result = toEntity(drinkDto);
         result = drinkRepository.save(result);
         DrinkDto newDrink = toModel(result);
         return Optional.of(newDrink);
     }
 
-    private Drink convertToEntity(DrinkDto request) {
+    private Drink toEntity(DrinkDto request) {
         Drink requestEntity = modelMapper.map(request, Drink.class);
         return requestEntity;
     }
@@ -60,7 +60,7 @@ public class ProductService {
         return request;
     }
 
-    private Pizza convertToEntity(PizzaDto request) {
+    private Pizza toEntity(PizzaDto request) {
         Pizza requestEntity = modelMapper.map(request, Pizza.class);
         return requestEntity;
     }
